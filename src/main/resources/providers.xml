@@ -1,0 +1,135 @@
+<wmtsConfigs>
+    <wmts>
+        <tileSource name="OS_MAPBOX_LEISURE"
+                    urlTemplate="https://tiles-web-leisure.oscptiles.com/%s/%d/%d/%d.png?token=%s"
+                    apiKey="5213bc62ddc03f490aea3f6c13fa215c76e06ec21efe55e77d89274560c3770a7e61b460239e71effc87e9889b40f918485abdfc912a51a918c774edadc8766f"
+                    maxConcurrentConnections="5">
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="1_25k" minZoom="13" maxZoom="16" />
+            <layer name="1_50k" minZoom="13" maxZoom="16" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="OS_MAPBOX_LEISURE_250K"
+                    urlTemplate="https://250k-tiles-web-leisure.oscptiles.com/%d/%d/%d.png?token=%s"
+                    apiKey="5213bc62ddc03f490aea3f6c13fa215c76e06ec21efe55e77d89274560c3770a7e61b460239e71effc87e9889b40f918485abdfc912a51a918c774edadc8766f"
+                    maxConcurrentConnections="5">
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="DEFAULT" minZoom="10" maxZoom="12" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="OS_API"
+                    urlTemplate="https://api.os.uk/maps/raster/v1/zxy/%s/%d/%d/%d.png?key=%s"
+                    apiKey="xwRMsBNz7DLxlFnhoMXkpxCmoFDuIMQr"
+                    maxConcurrentConnections="5">
+            <header key="referer" value="https://labs.os.uk/" />
+        </tileSource>
+        <tilingScheme originX="-238375" originY="1376256" resolution="896" />
+        <layers>
+            <layer name="Leisure_27700" minZoom="2" maxZoom="9" />
+            <layer name="Road_27700" minZoom="2" maxZoom="9" />
+            <layer name="Outdoor_27700" minZoom="2" maxZoom="9" />
+            <layer name="Light_27700" minZoom="2" maxZoom="9" />
+        </layers>
+        <crs>27700</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="OPENTOPO"
+                    urlTemplate="https://tile.top-o-map.de/%d/%d/%d.png"
+                    apiKey="gKvBfnIZzoCiivvHuzt3"
+                    maxConcurrentConnections="1">
+            <header key="referer" value="https://top-o-map.de/" />
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="DEFAULT" minZoom="6" maxZoom="20" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="ERROR TEST1"
+                    urlTemplate="https://google.com/blah"
+                    apiKey="gKvBfnIZzoCiivvHuzt3"
+                    maxConcurrentConnections="1">
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="DEFAULT" minZoom="6" maxZoom="20" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="MAPTILER"
+                    urlTemplate="https://api.maptiler.com/maps/%s/256/%d/%d/%d.jpg?key=%s"
+                    apiKey="gKvBfnIZzoCiivvHuzt3"
+                    maxConcurrentConnections="1">
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="satellite"   minZoom="6" maxZoom="20" />
+            <layer name="streets-v2"  minZoom="6" maxZoom="20" />
+            <layer name="openstreetmap" minZoom="6" maxZoom="20" />
+            <layer name="basic-v2"    minZoom="6" maxZoom="20" />
+            <layer name="dataviz-v2"  minZoom="6" maxZoom="20" />
+            <layer name="hybrid"      minZoom="6" maxZoom="20" />
+            <layer name="outdoor"     minZoom="6" maxZoom="20" />
+            <layer name="winter"      minZoom="6" maxZoom="20" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="CARTO_VOYAGER"
+                    urlTemplate="https://basemaps.cartocdn.com/rastertiles/voyager/%d/%d/%d.png"
+                    maxConcurrentConnections="5"/>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543"/>
+        <layers>
+            <layer name="DEFAULT" minZoom="6" maxZoom="20"/>
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="STAMEN"
+                    urlTemplate="https://tiles.stadiamaps.com/tiles/%s/%d/%d/%d.png"
+                    maxConcurrentConnections="5">
+            <header key="referer" value="https://maps.stamen.com/" />
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+                <layer name="stamen_toner" minZoom="6" maxZoom="20" />
+                <layer name="stamen_toner_lite" minZoom="6" maxZoom="20" />
+                <layer name="stamen_terrain" minZoom="6" maxZoom="20" />
+                <layer name="stamen_watercolor" minZoom="6" maxZoom="20" />
+                <layer name="alidade_smooth_dark" minZoom="6" maxZoom="20" />
+                <layer name="alidade_smooth" minZoom="6" maxZoom="20" />
+            </layers>
+            <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="OPENSTREETMAP"
+                    urlTemplate="https://tile.openstreetmap.org/%d/%d/%d.png"
+                    maxConcurrentConnections="5">
+        </tileSource>
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="DEFAULT" minZoom="6" maxZoom="19" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+    <wmts>
+        <tileSource name="OPENSTREETMAP_DE"
+                    urlTemplate="https://a.tile.openstreetmap.de/%d/%d/%d.png"
+                    maxConcurrentConnections="5" />
+        <tilingScheme originX="-20037508" originY="20037508" resolution="156543" />
+        <layers>
+            <layer name="DEFAULT" minZoom="6" maxZoom="19" />
+        </layers>
+        <crs>3857</crs>
+    </wmts>
+</wmtsConfigs>
