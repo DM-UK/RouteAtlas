@@ -49,7 +49,6 @@ public class TileLayerModel{
             int max = layer.maxZoom();
             int value = Math.max(min, Math.min(zoom.getValue(), max));
             zoom.setRangeProperties(value, 0, min, max, false);
-            System.out.println(min+","+max);
         }
     }
 

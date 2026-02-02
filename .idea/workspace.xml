@@ -1,40 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="routeatlas:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8ad7adf-bfae-4db4-8145-1106946aaf53" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/routeatlas_jar/routeatlas.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/CompilationFeatureToggle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasStateListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/WebMapProviders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRouteDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/Cluster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/PageFitClusterer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/Rectangle2DUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/AtlasImageCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/GraphicsUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/MapRenderSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/MapRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/RenderSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/TileLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/render/TimeDistanceGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/route/Route.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/route/RouteUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/route/WayPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/MapPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasCompiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/ScaledPaper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/TileLayerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapTabBinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/AtlasSetupPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/CompilationPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/FooterPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/MapDisplayPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ProgressBarPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/RenderSetupPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/TileLayerSetupPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/AccordionPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/BasicForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/DoubleBoundedRangeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/DoubleSlider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/SliderDisplayPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/view/AtlasInfoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/view/AtlasSetupView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/DefaultWMTSClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/Layer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/MapRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/ProgressListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileDownloadTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileGrid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TilingScheme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WMTSClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WMTSException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WebMapTileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/GeographicBounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/ProjectionBounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/cache/FileSystemTileCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/cache/TileCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/CachingTileFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/HttpTileFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/TileFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/providers.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
-  <component name="ProjectId" id="38kTCbcdOeFLCVhuNBFgpNMBhqh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="38lDAHWHoSenxGVFhsoEzDSg4r9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.RouteAtlasApp.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Anonymous/ra/RouteAtlas/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ui.panes" />
+      <recent name="app" />
+      <recent name="render" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anonymous\ra\RouteAtlas\src\main\resources" />
+      <recent name="C:\Users\Anonymous\ra\RouteAtlas\src\main\java\render" />
+      <recent name="C:\Users\Anonymous\ra\RouteAtlas" />
+      <recent name="C:\Users\Anonymous\ra\RouteAtlas\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="render" />
+      <recent name="route" />
+      <recent name="routeatlas" />
+      <recent name="ui.panes" />
+      <recent name="app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="RouteAtlasApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.RouteAtlasApp" />
+      <module name="routeatlas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RouteAtlasApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d8ad7adf-bfae-4db4-8145-1106946aaf53" name="Changes" comment="" />
-      <created>1769342444034</created>
+      <changelist id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="" />
+      <created>1769365118282</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1769342444034</updated>
+      <updated>1769365118282</updated>
     </task>
     <servers />
   </component>

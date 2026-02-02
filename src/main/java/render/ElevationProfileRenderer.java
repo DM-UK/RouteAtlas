@@ -55,7 +55,6 @@ public class ElevationProfileRenderer {
     }
 
     public void render() {
-        System.out.println(settings.shouldDisplay());
        if (!settings.shouldDisplay())
            return;
 
