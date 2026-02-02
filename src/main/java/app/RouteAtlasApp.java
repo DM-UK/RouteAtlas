@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class RouteAtlasApp extends JFrame implements CompilationFeatureToggle, RouteAtlasStateListener{
-    public final static Path BASE_DIR = Paths.get(System.getProperty("user.home")).resolve("RouteAtlasssss");
+    public final static Path BASE_DIR = Paths.get(System.getProperty("user.home")).resolve("RouteAtlas");
     private final static Path PDF_DIR = BASE_DIR.resolve("pdfs");
     private final static Path TILE_CACHE_DIR = BASE_DIR.resolve("tile_cache");
 
