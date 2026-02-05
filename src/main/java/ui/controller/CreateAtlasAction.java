@@ -1,6 +1,5 @@
 package ui.controller;
 
-import app.CompilationFeatureToggle ;
 import app.RouteAtlasState;
 import ordnancesurvey.OrdnanceSurveyRouteDownloader;
 import route.Route;
@@ -18,21 +17,21 @@ public class CreateAtlasAction extends AbstractAction{
     private final OrdnanceSurveyRouteDownloader downloader;
     private final AtlasSetupView atlasSetupView;
     private final RouteAtlasState routeAtlasState;
-    private final CompilationFeatureToggle compilationFeatureToggle  ;
+    private final CompilationControl compilationControl  ;
 
-    public CreateAtlasAction(OrdnanceSurveyRouteDownloader downloader, AtlasSetupView atlasSetupView, RouteAtlasState routeAtlasState, CompilationFeatureToggle compilationFeatureToggle ){
+    public CreateAtlasAction(OrdnanceSurveyRouteDownloader downloader, AtlasSetupView atlasSetupView, RouteAtlasState routeAtlasState, CompilationControl compilationControl){
         super("Create Atlas");
         this.downloader = downloader;
         this.atlasSetupView = atlasSetupView;
         this.routeAtlasState = routeAtlasState;
-        this.compilationFeatureToggle  = compilationFeatureToggle ;
+        this.compilationControl  = compilationControl ;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         //disable atlas creation/compilation until we have created this atlas
-        compilationFeatureToggle.enableAtlasCreation(false);
-        compilationFeatureToggle.enableCompilation(false);
+        compilationControl.setCompilationEnabled(false);
+        compilationControl.setAtlasCreationEnabled(false);
         ScaledPaper paper = getPaper();
 
         //create atlas in a background thread
@@ -45,13 +44,13 @@ public class CreateAtlasAction extends AbstractAction{
                     //once done update state
                     routeAtlasState.setAtlas(atlas);
                     //guaranteed to have a RouteAtlas now - enable compilation button
-                    compilationFeatureToggle.enableCompilation(true);
+                    compilationControl.setCompilationEnabled(true);
                 } catch (IOException ex) {
                     //route download exception
                     JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 } finally{
                     //remember to re-enable the creation button
-                    compilationFeatureToggle.enableAtlasCreation(true);
+                    compilationControl.setAtlasCreationEnabled(true);
                 }
 
                 return null;

@@ -37,7 +37,6 @@ public class BasicForm extends JPanel {
         add(labelPanel, BorderLayout.WEST);
         add(componentPanel, BorderLayout.CENTER);
 
-        //hide button for forms that don't require one
         button.setVisible(false);
         buttonPanel.add(button);
         add(buttonPanel, BorderLayout.SOUTH);

@@ -1,16 +1,18 @@
 package ui.controller;
 
 import app.RouteAtlasState;
+import app.RouteAtlasStateListener;
 import render.AtlasImageCreator;
 import routeatlas.MapPage;
+import routeatlas.RouteAtlas;
 import ui.view.AtlasInfoView;
 import wmts.WMTSException;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 
-/*** Handles map rendering updates using the current RouteAtlasState map selection. */
-public class MapUpdater{
+/** Handles map rendering updates through the RouteAtlasStateListener and external calls to requestMap(). */
+public class MapUpdater implements RouteAtlasStateListener {
     private final RouteAtlasState appState;
     private final AtlasImageCreator atlasImageCreator;
     private final AtlasInfoView atlasInfoView;
@@ -51,5 +53,15 @@ public class MapUpdater{
 
     public void cancelMapRequest() {
         atlasImageCreator.getClient().cancelCurrentRequest();
+    }
+
+    @Override
+    public void onAtlasChanged(RouteAtlas newAtlas) {
+
+    }
+
+    @Override
+    public void onMapSelectionIndexChanged(int newIndex) {
+        requestMap();
     }
 }

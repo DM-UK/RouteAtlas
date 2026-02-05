@@ -31,7 +31,7 @@ public class RouteAtlasState {
         notifyMapSelectionChanged();
     }
 
-    public void selectNextMapIndex() {
+    public void selectNextMap() {
         if (atlas == null)
             return;
 
@@ -40,7 +40,7 @@ public class RouteAtlasState {
         notifyMapSelectionChanged();
     }
 
-    public void selectPreviousMapIndex() {
+    public void selectPreviousMap() {
         if (atlas == null)
             return;
 

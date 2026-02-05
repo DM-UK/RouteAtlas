@@ -10,84 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/routeatlas_jar/routeatlas.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/CompilationFeatureToggle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasStateListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/WebMapProviders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRoute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRouteDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/Cluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/PageFitClusterer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pagefit/Rectangle2DUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/AtlasImageCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/GraphicsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/MapRenderSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/MapRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/RenderSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/TileLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/render/TimeDistanceGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/route/Route.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/route/RouteUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/route/WayPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/MapPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasCompiler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/routeatlas/ScaledPaper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/TileLayerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapTabBinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/AtlasSetupPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/CompilationPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/FooterPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/MapDisplayPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ProgressBarPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/RenderSetupPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/panes/TileLayerSetupPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/AccordionPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/BasicForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/DoubleBoundedRangeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/DoubleSlider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/SliderDisplayPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/view/AtlasInfoView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/view/AtlasSetupView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/DefaultWMTSClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/Layer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/MapRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/ProgressListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileDownloadTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TileSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/TilingScheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WMTSClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WMTSException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/WebMapTileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/GeographicBounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/ProjectionBounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/cache/FileSystemTileCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/cache/TileCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/CachingTileFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/HttpTileFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/TileFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/providers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/ButtonUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompilationControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/swing/TabbedAccordionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/CompilationFeatureToggle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/WebMapProviders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/WebMapProviders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/TileLayerModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/AtlasSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/AtlasSetupPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/TileLayerSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/TileLayerSetupPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/swing/AccordionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/swing/AccordionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/swing/BasicForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/swing/BasicForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +45,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DM-UK&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DM-UK/RouteAtlas/&quot;,
+    &quot;accountId&quot;: &quot;dd1e7c1b-0e32-4bab-9460-28a33098eb96&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -148,6 +100,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="app" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="render" />
       <recent name="route" />
@@ -162,7 +117,7 @@
       <module name="routeatlas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.*" />
+          <option name="PATTERN" value="ui.swing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

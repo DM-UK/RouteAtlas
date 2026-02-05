@@ -1,6 +1,5 @@
 package ui.controller;
 
-import app.CompilationFeatureToggle;
 import app.RouteAtlasState;
 import routeatlas.RouteAtlasCompiler;
 
@@ -14,13 +13,13 @@ import java.nio.file.Path;
 public class CompileAtlasAction extends AbstractAction {
     private final RouteAtlasCompiler routeAtlasCompiler;
     private final RouteAtlasState routeAtlasState;
-    private final CompilationFeatureToggle compilationFeatureToggle;
+    private final CompilationControl compilationControl;
 
-    public CompileAtlasAction(RouteAtlasCompiler routeAtlasCompiler, RouteAtlasState routeAtlasState, CompilationFeatureToggle compilationFeatureToggle) {
+    public CompileAtlasAction(RouteAtlasCompiler routeAtlasCompiler, RouteAtlasState routeAtlasState, CompilationControl compilationControl) {
         super("Compile PDF");
         this.routeAtlasCompiler = routeAtlasCompiler;
         this.routeAtlasState = routeAtlasState;
-        this.compilationFeatureToggle = compilationFeatureToggle;
+        this.compilationControl = compilationControl;
     }
 
     @Override
@@ -29,16 +28,16 @@ public class CompileAtlasAction extends AbstractAction {
             @Override
             protected Void doInBackground(){
                 try {
-                    compilationFeatureToggle.enableCompilation(false);
-                    compilationFeatureToggle.enableAtlasCreation(false);
+                    compilationControl.setCompilationEnabled(false);
+                    compilationControl.setCompilationEnabled(false);
                     Path filePath = routeAtlasCompiler.compile(routeAtlasState.getAtlas());
                     openFolder(filePath.getParent());
                 } catch (Exception e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 } finally{
-                    compilationFeatureToggle.enableCompilation(true);
-                    compilationFeatureToggle.enableAtlasCreation(true);
+                    compilationControl.setCompilationEnabled(true);
+                    compilationControl.setCompilationEnabled(true);
                 }
 
                 return null;

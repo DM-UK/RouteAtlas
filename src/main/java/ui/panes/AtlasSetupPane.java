@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/** Panel containing route and page details. **/
+/** Panel containing route and page size details. **/
 public class AtlasSetupPane extends BasicForm implements AtlasSetupView {
     private final JTextField routeIdField;
     private final JTextField pageWidthField;

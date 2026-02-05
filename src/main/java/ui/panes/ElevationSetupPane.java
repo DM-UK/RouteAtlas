@@ -34,11 +34,6 @@ public class ElevationSetupPane extends BasicForm implements ElevationProfileSet
         this.outlineThickness =  addSliderField("Outline Thickness", 0.0, 3.0, 0.5);
     }
 
-    public void setTickSpacing(int tickInterval, int segmentInterval){
-        this.tickInterval.setValue(tickInterval);
-        this.segmentInterval.setValue(segmentInterval);
-    }
-
     @Override
     public Dimension minimumCanvasDimensions() {
         return new Dimension(minimumWidth.getValue(), minimumHeight.getValue());
@@ -94,4 +89,11 @@ public class ElevationSetupPane extends BasicForm implements ElevationProfileSet
         return display.getSelectedItem().equals("On");
     }
 
+    public void setDistanceSpacing(int distanceSpacing) {
+        tickInterval.setValue(distanceSpacing);
+    }
+
+    public void setSegmentSpacing(int segmentSpacing) {
+        segmentInterval.setValue(segmentSpacing);
+    }
 }

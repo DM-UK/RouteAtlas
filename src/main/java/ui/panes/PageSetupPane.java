@@ -9,6 +9,7 @@ import ui.swing.AccordionPanel;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
+/** Panel encompassing a TileLayerSetupPane, RenderSetupPane and ElevationSetupPane in AccordionPanels, while allowing only a single AccordionPanel to expand at a time **/
 public class PageSetupPane extends JPanel implements RenderSetup {
     private final DefaultComboBoxModel<String> unitsComboBox = new DefaultComboBoxModel<>(new String[]{"Miles", "Kilometres"});
 
@@ -44,6 +45,8 @@ public class PageSetupPane extends JPanel implements RenderSetup {
             if (Boolean.TRUE.equals(evt.getNewValue()))
                 collapseOtherPanels(elevationAccordionPane);
         });
+
+        tileLayerAccordionPane.setExpanded(true);
     }
 
     private void collapseOtherPanels(AccordionPanel selection) {
@@ -76,5 +79,12 @@ public class PageSetupPane extends JPanel implements RenderSetup {
         tileLayerPane.getTileLayerModel().addListener(listener);
         renderPane.addFieldChangeListener(listener);
         elevationSetupPane.addFieldChangeListener(listener);
+    }
+
+    public void setToOverviewDefaults() {
+        elevationSetupPane.setDistanceSpacing(10);
+        elevationSetupPane.setSegmentSpacing(30);
+        tileLayerPane.setProvider(1);
+        tileLayerPane.setZoom(10);
     }
 }

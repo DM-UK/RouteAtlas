@@ -14,7 +14,6 @@ public class AccordionPanel extends JPanel {
     private final String title;
 
     private boolean expanded = false;
-    private int expandedPreferredWidth = -1;
 
     public AccordionPanel(String title, JComponent content) {
         this.title = title;
@@ -66,7 +65,6 @@ public class AccordionPanel extends JPanel {
     public Dimension getPreferredSize() {
         Dimension headerSize = headerButton.getPreferredSize();
 
-        // Temporarily make content visible to measure its size
         boolean wasVisible = contentPanel.isVisible();
         contentPanel.setVisible(true);
         Dimension contentSize = contentPanel.getPreferredSize();
