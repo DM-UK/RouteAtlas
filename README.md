@@ -30,7 +30,8 @@ An overview of all the map sections is created on the first page of the PDF.
 ### Map Rendering
 Various configurable render properties can be applied to a map.
 #### Distance Markers
-**Major interval (1 mile). Minor interval (1/4 mile)**
+**eg. Major interval (1 mile). Minor interval (1/4 mile)**
+
 <img width="525" height="240" alt="mile_markers_resized" src="https://github.com/user-attachments/assets/a151ba0f-22fa-44fa-9f26-3ec8736612ef" />
 
 #### Elevation Profile
