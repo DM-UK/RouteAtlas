@@ -39,7 +39,9 @@ Various configurable render properties can be applied to a map.
 #### Elevation Profile
 <img width="429" height="215" alt="elevation_profile_resized" src="https://github.com/user-attachments/assets/90a66c0c-0f3f-4947-8d98-2cbf48761c10" />
 
-### Running RouteAtlas
-RouteAtlas is distributed as a runnable JAR [here](https://github.com/DM-UK/RouteAtlas/blob/master/routeatlas.jar). Instructions to execute a runnable Jar are [here](https://www.talentelgia.com/blog/step-by-step-guide-to-run-a-jar-file/).
+### Installation
+Clone the repository.
+
+Alternatively, RouteAtlas is distributed as a runnable JAR [here](https://github.com/DM-UK/RouteAtlas/blob/master/routeatlas.jar). Instructions to execute a runnable Jar are [here](https://www.talentelgia.com/blog/step-by-step-guide-to-run-a-jar-file/).
 
 
