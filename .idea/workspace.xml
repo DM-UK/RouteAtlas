@@ -9,36 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="minor refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/FileIOUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/GeometryUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Graphics2DUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pagefit/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pagefit/Cluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pagefit/PageFitClusterer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pagefit/PageFitClusterer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pagefit/Rectangle2DUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/GraphicsUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/MapRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/MapRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/TimeDistanceGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/TimeDistanceGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/routeatlas/MapPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/routeatlas/MapPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/RouteAtlasCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlasFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/routeatlas/ScaledPaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/routeatlas/ScaledPaper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/ButtonUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/ButtonUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CreateAtlasAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/MapTabBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapTabBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/MapUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/ElevationSetupPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/MapDisplayPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/MapDisplayPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/PageSetupPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/panes/RenderSetupPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/panes/RenderSetupPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" afterDir="false" />
-    </list>
+    <list default="true" id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="minor refactoring" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +56,7 @@
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -165,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770295876201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="minor refactoring">
+      <option name="closed" value="true" />
+      <created>1770586747790</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770586747790</updated>
+    </task>
+    <task id="LOCAL-00003" summary="minor refactoring">
+      <option name="closed" value="true" />
+      <created>1770586757955</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770586757955</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
