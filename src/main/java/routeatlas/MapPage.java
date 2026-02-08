@@ -4,7 +4,7 @@ import org.locationtech.proj4j.CoordinateReferenceSystem;
 import org.locationtech.proj4j.ProjCoordinate;
 import wmts.bounds.Bounds;
 
-//“Represent a map page and its derived bounds in the map’s CRS”
+/** Represent a map page and its bounds in the specified CRS */
 public class MapPage {
     private final CoordinateReferenceSystem crs;
     private final Bounds bounds;

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/** Modified k-means clustering algorithm, using midpoint rather than the mean as centroid   */
 public class PageFitClusterer {
     private int iterationsBeforeAddingNewCluster;
     private Dimension2D pageDimensions;
@@ -48,10 +49,7 @@ public class PageFitClusterer {
         return sortedClusters;
     }
 
-    /**
-     * Assigns each point to the nearest cluster based on Euclidean distance.
-     * Clears previous cluster assignments before reassignment.
-     */
+    /** Assigns each point to the nearest cluster based on Euclidean distance. Clears previous cluster assignments before reassignment. */
     private void assignPointsToClusters() {
         // Clear previous points from all clusters
         for (Cluster cluster : clusters)
@@ -76,9 +74,7 @@ public class PageFitClusterer {
         }
     }
 
-    /**
-     * Retrieves a list of points that are not contained within any of the clusters page.
-     */
+    /** Retrieves a list of points that are not contained within any of the clusters page. */
     private List<Point2D> getPointsNotInPage() {
         List<Point2D> pointsNotInPage = new ArrayList<>(points);
 
@@ -92,15 +88,11 @@ public class PageFitClusterer {
         return pointsNotInPage;
     }
 
-    /**
-     * Adds a new cluster to the list of clusters using a randomly selected point that is not
-     * within any existing cluster's page.
-     */
+    /** Adds a new cluster to the list of clusters using a randomly selected point that is not within any existing cluster's page. */
     private void addCluster() {
         List<Point2D> pointsNotInPage = getPointsNotInPage();
 
         if (!pointsNotInPage.isEmpty()) {
-            //Point2D randomPoint = pointsNotInPage.get((int) (0.999 * pointsNotInPage.size()));
             Point2D randomPoint = pointsNotInPage.get((int) (Math.random() * pointsNotInPage.size()));
             Cluster newCluster = new Cluster(randomPoint, pageDimensions);
             clusters.add(newCluster);

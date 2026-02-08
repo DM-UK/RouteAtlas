@@ -11,6 +11,7 @@ import java.awt.print.PageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Handles coordinate conversion and scale calculations for rendering map data onto a BufferedImage. */
 public class MapRenderer {
     final MapPage map;
     final BufferedImage image;
@@ -18,7 +19,6 @@ public class MapRenderer {
     private double pixelsPerGeographicMetre;
     private double paperMetresPerPixel;
 
-    /** Handles coordinate conversion and scale calculations for rendering map data onto a BufferedImage. */
     public MapRenderer(MapPage map, BufferedImage image){
         this.map = map;
         this.image = image;

@@ -1,5 +1,7 @@
 package render;
 
+import utils.Graphics2DUtils;
+
 import java.awt.*;
 import java.util.List;
 
@@ -61,7 +63,6 @@ public class TimeDistanceGraph {
         Dimension dimension = getDimensions();
         g2d.fillRect(0, 0, dimension.width, dimension.height);
         g2d.setColor(Color.black);
-        int offset = (int) (outlineStroke.getLineWidth());
         g2d.setStroke(outlineStroke);
         g2d.drawRect(0, 0, dimension.width, dimension.height);
         g2d.setFont(tickFont);
@@ -173,10 +174,10 @@ public class TimeDistanceGraph {
 
             if (this != yAxisLayout){
                 int centreOffset = (axisDimension.height / 2);
-                GraphicsUtils.drawAlignedString(g2d, label, p.x, p.y + centreOffset, GraphicsUtils.ALIGN_CENTRE);
+                Graphics2DUtils.drawAlignedString(g2d, label,  p.x, p.y + centreOffset, Graphics2DUtils.HAlign.CENTRE, Graphics2DUtils.VAlign.MIDDLE);
             }
             else
-                GraphicsUtils.drawAlignedString(g2d, label+"  ", p.x, p.y, GraphicsUtils.ALIGN_RIGHT); //add some whitespace to move it from axis
+                Graphics2DUtils.drawAlignedString(g2d, label+"  ",  p.x, p.y, Graphics2DUtils.HAlign.RIGHT, Graphics2DUtils.VAlign.MIDDLE);
         }
 
         public Point getTickPosition(double tickNumber) {

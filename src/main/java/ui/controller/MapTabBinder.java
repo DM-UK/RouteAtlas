@@ -8,8 +8,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-/** Responsible for 'binding' the SingleSelectionModel model of the tab to that of a RouteAtlasState's selectionIndex. **/
-public final class MapTabBinder implements ChangeListener, RouteAtlasStateListener {
+/** Responsible for 'binding' the SingleSelectionModel model (in our case of a tabbedpane) to that of a RouteAtlasState's selectionIndex. **/
+public class MapTabBinder implements ChangeListener, RouteAtlasStateListener {
     private static final int SINGLE_SELECTION_MODEL_MAXIMUM_INDEX = 1; // since we only have two tabs. set to 0 or 1 (maximum)
     private final RouteAtlasState routeAtlasState;
     private final SingleSelectionModel tabModel;

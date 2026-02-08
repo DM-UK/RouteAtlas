@@ -10,6 +10,7 @@ import wmts.WMTSException;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
+import java.util.concurrent.CancellationException;
 
 /** Handles map rendering updates through the RouteAtlasStateListener and external calls to requestMap(). */
 public class MapUpdater implements RouteAtlasStateListener {
@@ -33,7 +34,8 @@ public class MapUpdater implements RouteAtlasStateListener {
                 } catch (WMTSException e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                    //throw new RuntimeException(e);
+                } catch (CancellationException e) {
+                    System.err.println("Cancelled map request");
                 }
 
                 return null;

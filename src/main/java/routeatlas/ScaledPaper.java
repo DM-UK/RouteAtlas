@@ -5,7 +5,6 @@ import java.awt.print.Paper;
 
 public class ScaledPaper {
     public static final String[] PAPER_SIZE_STRINGS = new String[]{"A1", "A2", "A3", "A4", "A5", "A6", "Custom"};
-    public static final ScaledPaper DEFAULT = fromString("A4", 25000);
 
     private final Paper paper;
     private final double paperWidth;

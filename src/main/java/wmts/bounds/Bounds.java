@@ -6,52 +6,6 @@ import org.locationtech.proj4j.ProjCoordinate;
 import java.util.List;
 
 public interface Bounds {
-    default Bounds padToAspectRatio(double width, double height) {
-        ProjCoordinate lower = getLowerCorner();
-        ProjCoordinate upper = getUpperCorner();
-
-        // Current bounds
-        double cx = (lower.x + upper.x) / 2.0;
-        double cy = (lower.y + upper.y) / 2.0;
-        double rw = upper.x - lower.x;
-        double rh = upper.y - lower.y;
-
-        if (rw <= 0 || rh <= 0) {
-            return this; // degenerate bounds
-        }
-
-        double currentAR = rw / rh;
-
-        // Candidate aspect ratios
-        double arLandscape = width / height;
-        double arPortrait  = height / width;
-
-        // Choose closest aspect ratio
-        double landscapeDiff = Math.abs(currentAR - arLandscape);
-        double portraitDiff  = Math.abs(currentAR - arPortrait);
-        double desiredAR     = (landscapeDiff <= portraitDiff) ? arLandscape : arPortrait;
-
-        double newW = rw;
-        double newH = rh;
-
-        // Pad to match desired aspect ratio
-        if (currentAR < desiredAR) {
-            // Too tall → widen
-            newW = rh * desiredAR;
-        } else if (currentAR > desiredAR) {
-            // Too wide → heighten
-            newH = rw / desiredAR;
-        } else {
-            return this; // already matches
-        }
-
-        // Re-center
-        ProjCoordinate newLower = new ProjCoordinate(cx - newW / 2.0, cy - newH / 2.0);
-        ProjCoordinate newUpper = new ProjCoordinate(cx + newW / 2.0, cy + newH / 2.0);
-
-        return new ProjectionBounds(newLower, newUpper, getCRS());
-    }
-
     default int getOrientation() {
         ProjCoordinate lower = getLowerCorner();
         ProjCoordinate upper = getUpperCorner();

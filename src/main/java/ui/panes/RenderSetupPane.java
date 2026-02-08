@@ -6,6 +6,7 @@ import ui.swing.DoubleSlider;
 
 import javax.swing.*;
 
+/** Panel containing map render settings. **/
 public class RenderSetupPane extends BasicForm implements MapRenderSettings {
     private final JSlider markerInterval;
     private final DoubleSlider markerSize;

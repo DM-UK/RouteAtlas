@@ -5,6 +5,7 @@ import routeatlas.RouteAtlas;
 import java.util.ArrayList;
 import java.util.List;
 
+/** The current RouteAtlas and the map selection index of our display  */
 public class RouteAtlasState {
     private RouteAtlas atlas;
     private int mapSelectionIndex;

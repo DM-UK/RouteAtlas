@@ -29,7 +29,7 @@ public class CreateAtlasAction extends AbstractAction{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //disable atlas creation/compilation until we have created this atlas
+        //prevent atlas compilation/creation until complete
         compilationControl.setCompilationEnabled(false);
         compilationControl.setAtlasCreationEnabled(false);
         ScaledPaper paper = getPaper();
@@ -47,7 +47,7 @@ public class CreateAtlasAction extends AbstractAction{
                     compilationControl.setCompilationEnabled(true);
                 } catch (IOException ex) {
                     //route download exception
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Route Download Error", JOptionPane.ERROR_MESSAGE);
                 } finally{
                     //remember to re-enable the creation button
                     compilationControl.setAtlasCreationEnabled(true);

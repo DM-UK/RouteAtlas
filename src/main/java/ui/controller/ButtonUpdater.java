@@ -2,6 +2,7 @@ package ui.controller;
 
 import javax.swing.*;
 
+/** Responsible for enabling/disabling atlas creation/compile buttons  */
 public class ButtonUpdater implements CompilationControl{
     private final JButton atlasButton;
     private final JButton compilationButton;

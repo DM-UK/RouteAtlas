@@ -7,6 +7,7 @@ import ui.swing.DoubleSlider;
 import javax.swing.*;
 import java.awt.*;
 
+/** Panel containing elevation profile render settings. **/
 public class ElevationSetupPane extends BasicForm implements ElevationProfileSettings {
     private final DefaultComboBoxModel<String> unitsComboBoxModel;
     private final JComboBox<String> display;
@@ -22,7 +23,7 @@ public class ElevationSetupPane extends BasicForm implements ElevationProfileSet
 
     public ElevationSetupPane(DefaultComboBoxModel<String> unitsComboBoxModel){
         this.unitsComboBoxModel = unitsComboBoxModel;
-        this.display = addComboBoxField("Display", new String[]{"On", "Off"});
+        this.display = addComboBoxField("Display", new String[]{"Off", "On"});
         this.tickInterval = addSliderField("Distance Interval", 1, 15, 1);
         this.segmentInterval = addSliderField("Segment Interval", 1, 30, 5);
         this.xOffset =  addSliderField("X position", 0.0, 1.0, 0.995);

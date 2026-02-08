@@ -1,7 +1,7 @@
 package ui.controller;
 
 import app.RouteAtlasState;
-import routeatlas.RouteAtlasCompiler;
+import render.RouteAtlasCompiler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.nio.file.Path;
 
-/** Swing Action responsible for compiling a RouteAtlas to pdf in a background thread */
+/** Swing Action responsible for compiling a RouteAtlas to a pdf in a background thread. */
 public class CompileAtlasAction extends AbstractAction {
     private final RouteAtlasCompiler routeAtlasCompiler;
     private final RouteAtlasState routeAtlasState;
@@ -28,7 +28,8 @@ public class CompileAtlasAction extends AbstractAction {
             @Override
             protected Void doInBackground(){
                 try {
-                    compilationControl.setCompilationEnabled(false);
+                    //prevent atlas compilation/creation until complete
+                    compilationControl.setAtlasCreationEnabled(false);
                     compilationControl.setCompilationEnabled(false);
                     Path filePath = routeAtlasCompiler.compile(routeAtlasState.getAtlas());
                     openFolder(filePath.getParent());
@@ -36,7 +37,8 @@ public class CompileAtlasAction extends AbstractAction {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 } finally{
-                    compilationControl.setCompilationEnabled(true);
+                    //re-enable
+                    compilationControl.setAtlasCreationEnabled(true);
                     compilationControl.setCompilationEnabled(true);
                 }
 

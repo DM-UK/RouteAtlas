@@ -9,7 +9,7 @@ import ui.swing.AccordionPanel;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
-/** Panel encompassing a TileLayerSetupPane, RenderSetupPane and ElevationSetupPane in AccordionPanels, while allowing only a single AccordionPanel to expand at a time **/
+/** Panel encompassing a TileLayerSetupPane, RenderSetupPane and ElevationSetupPane in AccordionPanel's. Only one AccordionPanel can expand at a time. **/
 public class PageSetupPane extends JPanel implements RenderSetup {
     private final DefaultComboBoxModel<String> unitsComboBox = new DefaultComboBoxModel<>(new String[]{"Miles", "Kilometres"});
 

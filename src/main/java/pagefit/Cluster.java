@@ -1,5 +1,7 @@
 package pagefit;
 
+import utils.GeometryUtils;
+
 import java.awt.geom.Dimension2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -7,6 +9,7 @@ import java.awt.print.PageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Represents a page cluster. Centroid is calculated as the midpoint of all the clusters assigned points.  */
 public class Cluster {
     private final Dimension2D pageDimensions;
     private List<Point2D> points = new ArrayList();
@@ -41,7 +44,7 @@ public class Cluster {
     }
 
     public void calculateCentrePoint() {
-        this.centre = Rectangle2DUtils.calculateBoundingBoxCentre(points);
+        this.centre = GeometryUtils.calculateBoundingBoxCentre(points);
         pageBounds = createBounds(orientation);
     }
 

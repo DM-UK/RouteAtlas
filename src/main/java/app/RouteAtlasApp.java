@@ -3,19 +3,17 @@ package app;
 import ui.controller.*;
 import ordnancesurvey.OrdnanceSurveyRouteDownloader;
 import render.AtlasImageCreator;
-import routeatlas.RouteAtlasCompiler;
+import render.RouteAtlasCompiler;
 import ui.panes.*;
 import ui.swing.TabbedAccordionPanel;
+import utils.FileIOUtils;
 import wmts.WebMapProviders;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 
 public class RouteAtlasApp extends JFrame {
     public final static Path BASE_DIR = Paths.get(System.getProperty("user.home")).resolve("RouteAtlas");
@@ -35,14 +33,18 @@ public class RouteAtlasApp extends JFrame {
     private final FooterPane footerPane = new FooterPane();
     private final TabbedAccordionPanel pageSetupTab = new TabbedAccordionPanel();
 
-    //atlas image/pdf creation
+    //atlas image creation
     private final AtlasImageCreator atlasImageCreator = new AtlasImageCreator(TILE_CACHE_DIR, overviewPageSetupPane, sectionPageSetupPane, mapDisplayPane.getProgressListener());
+
+    //atlas pdf creation
     private final RouteAtlasCompiler routeAtlasCompiler = new RouteAtlasCompiler(PDF_DIR, atlasImageCreator, compilationPane.getProgressBar());
 
-    //controller/actions
+    //controllers
     private final MapTabBinder mapTabBinder = new MapTabBinder(routeAtlasState, pageSetupTab.getModel());
     private final ButtonUpdater buttonUpdater = new ButtonUpdater(atlasSetupPane.getButton(), compilationPane.getCompilationButton());
     private final MapUpdater mapUpdater = new MapUpdater(routeAtlasState, footerPane, atlasImageCreator);
+
+    //button actions
     private final CompileAtlasAction compileAtlasAction = new CompileAtlasAction(routeAtlasCompiler, routeAtlasState, buttonUpdater);
     private final CreateAtlasAction createAtlasAction = new CreateAtlasAction(downloader, atlasSetupPane, routeAtlasState, buttonUpdater);
 
@@ -95,7 +97,7 @@ public class RouteAtlasApp extends JFrame {
 
     public static void main(String[] args) {
         try {
-            Path configFile = FileIO.ensureResourceFile(BASE_DIR, "providers.xml");
+            Path configFile = FileIOUtils.ensureResourceFile(BASE_DIR, "providers.xml");
             WebMapProviders.CONFIG_FILE_PATH = configFile;
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,32 +106,4 @@ public class RouteAtlasApp extends JFrame {
         SwingUtilities.invokeLater(RouteAtlasApp::new);
     }
 
-    public static final class FileIO {
-
-        public static Path ensureResourceFile(Path baseDir, String resourceName) throws IOException {
-            Files.createDirectories(baseDir);
-            Path targetFile = baseDir.resolve(resourceName);
-
-            if (Files.notExists(targetFile)) {
-                copyFromResources(resourceName, targetFile, FileIO.class);
-                System.out.println(resourceName + " copied to " + baseDir);
-            } else {
-                System.out.println(resourceName + " already exists in " + baseDir);
-            }
-
-            return targetFile;
-        }
-
-        private static void copyFromResources(String resourceName, Path target, Class resourceOwner) throws IOException {
-            try (InputStream in = resourceOwner
-                    .getClassLoader()
-                    .getResourceAsStream(resourceName)) {
-
-                if (in == null)
-                    throw new IOException("Resource not found: " + resourceName);
-
-                Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
-            }
-        }
-    }
 }

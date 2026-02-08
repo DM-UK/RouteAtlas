@@ -6,6 +6,7 @@ import route.RouteUtils;
 import route.WayPoint;
 import routeatlas.MapPage;
 import routeatlas.RouteAtlas;
+import utils.Graphics2DUtils;
 import wmts.bounds.Bounds;
 
 import java.awt.*;
@@ -213,7 +214,7 @@ public class ElevationProfileRenderer {
                 }
 
                 int centreOffset = (axisDimension.height / 2);
-                GraphicsUtils.drawAlignedString(g2d, label, p.x, p.y + centreOffset, GraphicsUtils.ALIGN_CENTRE);
+                Graphics2DUtils.drawAlignedString(g2d, label, p.x, p.y + centreOffset, Graphics2DUtils.HAlign.CENTRE, Graphics2DUtils.VAlign.MIDDLE);
             }
         }
 

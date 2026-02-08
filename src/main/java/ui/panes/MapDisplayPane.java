@@ -1,6 +1,6 @@
 package ui.panes;
 
-import pagefit.Rectangle2DUtils;
+import utils.GeometryUtils;
 import wmts.ProgressListener;
 
 import javax.swing.*;
@@ -84,7 +84,7 @@ public class MapDisplayPane extends JLayeredPane{
                 if (img == null)
                     return;
 
-                Rectangle r = Rectangle2DUtils.fitCentered(getWidth(), getHeight(), img.getWidth(), img.getHeight());
+                Rectangle r = GeometryUtils.fitCentered(getWidth(), getHeight(), img.getWidth(), img.getHeight());
                 g.drawImage(img, r.x, r.y, r.width, r.height, null);
             }
         };
