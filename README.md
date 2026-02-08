@@ -2,7 +2,7 @@
 # RouteAtlas
 RouteAtlas is a Java map image creation application designed for creating a printable PDF containing all map sections of a given route. 
 
-Sampe output of a route is [here](https://github.com/user-attachments/files/25170141/sdw25k.pdf).
+See sample output [here](https://github.com/user-attachments/files/25170141/sdw25k.pdf).
 
 
 https://github.com/user-attachments/assets/62eeaa8b-45f6-4cbe-b7b3-599b4eba10a2
