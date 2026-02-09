@@ -2,6 +2,7 @@ package ui.controller;
 
 import app.RouteAtlasState;
 import render.RouteAtlasCompiler;
+import wmts.WMTSException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,8 +34,7 @@ public class CompileAtlasAction extends AbstractAction {
                     compilationControl.setCompilationEnabled(false);
                     Path filePath = routeAtlasCompiler.compile(routeAtlasState.getAtlas());
                     openFolder(filePath.getParent());
-                } catch (Exception e) {
-                    e.printStackTrace();
+                } catch (IOException | WMTSException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 } finally{
                     //re-enable
@@ -54,5 +54,9 @@ public class CompileAtlasAction extends AbstractAction {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void cancel() {
+        routeAtlasCompiler.cancel();
     }
 }

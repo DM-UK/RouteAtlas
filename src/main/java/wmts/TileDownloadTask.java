@@ -63,7 +63,6 @@ public final class TileDownloadTask {
 
     public void cancel() {
         cancelled.set(true);
-        executor.shutdownNow();
-
+        //executor.shutdownNow();
     }
 }

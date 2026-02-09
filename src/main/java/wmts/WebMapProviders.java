@@ -17,20 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WebMapProviders {
-    public static Path CONFIG_FILE_PATH;
+    private static WebMapTileService[] PROVIDERS;
 
     public static WebMapTileService[]  getAll(){
-        try {
-
-            return loadFromFile2(CONFIG_FILE_PATH);
-        } catch (IOException | SAXException | ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        }
+        return PROVIDERS;
     }
 
-    public static WebMapTileService[] loadFromFile2(Path filePath)
-            throws IOException, ParserConfigurationException, SAXException {
-
+    public static void load(Path filePath) throws IOException, ParserConfigurationException, SAXException {
         List<WebMapTileService> services = new ArrayList<>();
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -47,7 +40,6 @@ public class WebMapProviders {
             String urlTemplate = tileSourceElem.getAttribute("urlTemplate");
             String apiKey = tileSourceElem.hasAttribute("apiKey") ? tileSourceElem.getAttribute("apiKey") : null;
 
-// headers as array of key, value, key, value ...
             NodeList headerNodes = tileSourceElem.getElementsByTagName("header");
             String[] headers = new String[headerNodes.getLength() * 2];
             for (int h = 0; h < headerNodes.getLength(); h++) {
@@ -58,14 +50,12 @@ public class WebMapProviders {
 
             TileSource tileSource = new TileSource(tileSourceName, urlTemplate, headers, apiKey);
 
-            // ---- Tiling Scheme ----
             Element tilingSchemeElem = getFirst(wmtsElem, "tilingScheme");
             double originX = Double.parseDouble(tilingSchemeElem.getAttribute("originX"));
             double originY = Double.parseDouble(tilingSchemeElem.getAttribute("originY"));
             double resolution = Double.parseDouble(tilingSchemeElem.getAttribute("resolution"));
             TilingScheme tilingScheme = new TilingScheme(new Point2D.Double(originX, originY), resolution);
 
-            // ---- Layers ----
             List<Layer> layers = new ArrayList<>();
             Element layersElem = getFirst(wmtsElem, "layers");
             if (layersElem != null) {
@@ -79,19 +69,17 @@ public class WebMapProviders {
                 }
             }
 
-            // ---- CRS ----
             Element crsElem = getFirst(wmtsElem, "crs");
             String crsCode = (crsElem != null) ? crsElem.getTextContent().trim() : "3857"; // default 3857
             CoordinateReferenceSystem crs = new CRSFactory().createFromName("epsg:" + crsCode);
             Layer[] layerArr = layers.toArray(new Layer[0]);
-            // ---- Construct Service ----
+
             services.add(new WebMapTileService(crs, tileSource, tilingScheme, layerArr, 20));
         }
 
-        return services.toArray(new WebMapTileService[0]);
+        PROVIDERS = services.toArray(new WebMapTileService[0]);
     }
 
-    // Helper: safely get first child element by tag name
     private static Element getFirst(Element parent, String tag) {
         NodeList list = parent.getElementsByTagName(tag);
         return (list.getLength() > 0) ? (Element) list.item(0) : null;

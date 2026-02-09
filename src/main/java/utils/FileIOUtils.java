@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 public final class FileIOUtils {
-
     public static Path ensureResourceFile(Path baseDir, String resourceName) throws IOException {
         Files.createDirectories(baseDir);
         Path targetFile = baseDir.resolve(resourceName);

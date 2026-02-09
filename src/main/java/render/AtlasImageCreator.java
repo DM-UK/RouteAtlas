@@ -30,6 +30,10 @@ public class AtlasImageCreator {
         RouteAtlas transformedAtlas = atlas.convertCRS(renderSetup.getTileLayer().getProvider().crs());
         MapPage transformedMap = transformedAtlas.getAllPages().get(pageIndex);
         BufferedImage image = createMapImage(renderSetup, transformedMap);
+        //convert to miles if necessary
+        if (renderSetup.getRenderSettings().useMileUnits())
+            transformedAtlas = transformedAtlas.convertAtlasToMiles();
+
         //now draw onto our map image
         AtlasMapRenderer atlasRenderer = new AtlasMapRenderer(transformedMap, image, transformedAtlas, pageIndex, renderSetup.getRenderSettings());
         ElevationProfileRenderer elevationProfileRenderer = new ElevationProfileRenderer(transformedAtlas, image, transformedMap, renderSetup.getElevationSettings());

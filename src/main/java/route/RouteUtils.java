@@ -11,7 +11,19 @@ import java.util.List;
 
 public class RouteUtils
 {
-    public static final double KM_TO_MILE = 1.609344;
+    public static final double KM_TO_MILE =  0.621371;
+
+    public static Route convertRouteToMiles(Route route) {
+        Route milesRoute = new Route(route.getRouteid(), route.getCrs());
+
+        for (WayPoint wp : route.getWaypoints()) {
+            double distanceMiles = wp.getTotalDistance() * KM_TO_MILE;
+            WayPoint wpMiles = new WayPoint(wp, milesRoute.getWaypoints().size(), wp.getElevation(), distanceMiles, wp.getTotalAscent(), wp.getTotalDescent());
+            milesRoute.addWayPoint(wpMiles);
+        }
+
+        return milesRoute;
+    }
 
     public static Route convertCRS(Route oldRoute, CoordinateReferenceSystem crs){
         CoordinateTransform transform = new BasicCoordinateTransform(oldRoute.getCrs(), crs);

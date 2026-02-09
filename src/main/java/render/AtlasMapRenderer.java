@@ -126,10 +126,6 @@ public class AtlasMapRenderer extends MapRenderer {
         // distance between each minor marker
         double minorSpacing = distanceBetweenMajorMarkers / (numberOfMinorMarkersInBetween + 1);
 
-        // convert spacing to miles if needed
-        if (mapRenderSettings.useMileUnits())
-            minorSpacing = minorSpacing * RouteUtils.KM_TO_MILE;
-
         // split the route into evenly spaced waypoints
         Route segmentedRoute = RouteUtils.createSegmentedRoute(atlas.getRoute(), minorSpacing);
         List<WayPoint> markers = segmentedRoute.getWaypoints();
@@ -155,9 +151,6 @@ public class AtlasMapRenderer extends MapRenderer {
                     text = "F";
                 else {
                     double distance = wp.getTotalDistance();
-
-                    if (mapRenderSettings.useMileUnits())
-                        distance = distance / RouteUtils.KM_TO_MILE;
 
                     // last two digits only
                     long wholeDistance = Math.round(distance);

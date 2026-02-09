@@ -19,23 +19,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RouteAtlasCompiler {
     private final Path pdfDir;
     private final AtlasImageCreator atlasImageCreator;
     private final ProgressListener progressListener;
+    private final AtomicBoolean cancelled = new AtomicBoolean(false);
 
+    /** Saves a RouteAtlas to a multi-page PDF with progress and cancellation support.*/
     public RouteAtlasCompiler(Path pdfDir, AtlasImageCreator atlasImageCreator, ProgressListener progressListener){
         this.pdfDir = pdfDir;
         this.atlasImageCreator = atlasImageCreator;
         this.progressListener = progressListener;
     }
 
-    public void cancel() {
-        atlasImageCreator.getClient().cancelCurrentRequest();
-    }
-
+    /** Save a RouteAtlas. Returns path file if successful. CPU/IO intensive. */
     public Path compile(RouteAtlas atlas) throws IOException, WMTSException, CancellationException {
+        cancelled.set(false);
         PDFExporter exporter = new PDFExporter();
         int total = atlas.getAllPages().size();
         progressListener.onStart(total);
@@ -43,26 +44,34 @@ public class RouteAtlasCompiler {
         int index = 0;
 
         try {
-            for (MapPage page: atlas.getAllPages()) {
-               // if (index == 2)
-                   // break;
+            for (MapPage page : atlas.getAllPages()) {
+                //check before image request
+                if (cancelled.get())
+                    throw new CancellationException("Route atlas compilation cancelled");
 
                 BufferedImage img = atlasImageCreator.createAtlasImage(atlas, index);
+
+                //check before saving to pdf
+                if (cancelled.get())
+                    throw new CancellationException("Route atlas compilation cancelled");
+
                 exporter.addPage(img, page.getScaledPaper().getPaper(), page.getOrientation());
-                progressListener.onProgress(index+1, total);
+
+                progressListener.onProgress(index + 1, total);
                 index++;
             }
-        }
-        catch (CancellationException e){
-            System.out.println(e);
-            return null;
+
+            //return pdf path
+            return exporter.saveToDisc();
         }
         finally {
-            atlasImageCreator.getClient().cancelCurrentRequest();
             progressListener.onComplete(null);
+            exporter.close();
         }
+    }
 
-        return exporter.save();
+    public void cancel() {
+        cancelled.set(true);
     }
 
     private class PDFExporter {
@@ -87,13 +96,16 @@ public class RouteAtlasCompiler {
             cs.close();
         }
 
-        private Path save() throws IOException {
+        private Path saveToDisc() throws IOException {
             String uniqueID = UUID.randomUUID().toString();
             Files.createDirectories(pdfDir);
             Path output = pdfDir.resolve(uniqueID+".pdf");
             document.save(output.toFile());
-            document.close();
             return output;
+        }
+
+        public void close() throws IOException {
+            document.close();
         }
     }
 }

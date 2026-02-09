@@ -6,9 +6,6 @@ import java.awt.geom.Rectangle2D;
 import java.util.List;
 
 public class GeometryUtils {
-    public static final int EXPAND_HORIZONTAL = 0;
-    public static final int EXPAND_VERTICAL = 1;
-
     /** Returns the centre of the rectangle that contains all the given points  */
     public static Point2D calculateBoundingBoxCentre(List<Point2D> points) {
         Rectangle2D bounds = calculateBoundingBox(points);
@@ -51,7 +48,21 @@ public class GeometryUtils {
         return new Rectangle(x, y, w, h);
     }
 
+    /** Returns a scaled Rectangle */
+    public static Rectangle2D scaleRectangle(Rectangle2D rect, double scale) {
+        double newWidth  = rect.getWidth()  * scale;
+        double newHeight = rect.getHeight() * scale;
 
+        double centerX = rect.getCenterX();
+        double centerY = rect.getCenterY();
+
+        double newX = centerX - newWidth  / 2.0;
+        double newY = centerY - newHeight / 2.0;
+
+        return new Rectangle2D.Double(newX, newY, newWidth, newHeight);
+    }
+
+    /** Pads a rectangle so its aspect ratio matches either the landscape or portrait orientation of the target size while remaining centered. */
     public static Rectangle2D padToAspectRatio(Rectangle2D rect, double targetWidth, double targetHeight) {
         double cx = rect.getCenterX();
         double cy = rect.getCenterY();
@@ -59,16 +70,14 @@ public class GeometryUtils {
         double rh = rect.getHeight();
 
         if (rw <= 0 || rh <= 0) {
-            return rect; // degenerate rectangle
+            return rect;
         }
 
         double currentAR = rw / rh;
 
-        // Candidate aspect ratios
         double arLandscape = targetWidth / targetHeight;
         double arPortrait  = targetHeight / targetWidth;
 
-        // Choose closest aspect ratio
         double landscapeDiff = Math.abs(currentAR - arLandscape);
         double portraitDiff  = Math.abs(currentAR - arPortrait);
         double desiredAR     = (landscapeDiff <= portraitDiff) ? arLandscape : arPortrait;
@@ -76,34 +85,16 @@ public class GeometryUtils {
         double newW = rw;
         double newH = rh;
 
-        // Pad to match desired aspect ratio
-        if (currentAR < desiredAR) {
-            // Too tall → widen
+        if (currentAR < desiredAR)
             newW = rh * desiredAR;
-        } else if (currentAR > desiredAR) {
-            // Too wide → heighten
+        else if (currentAR > desiredAR)
             newH = rw / desiredAR;
-        } else {
-            return rect; // already matches
-        }
+         else
+            return rect;
 
-        // Re-center rectangle
         double newX = cx - newW / 2.0;
         double newY = cy - newH / 2.0;
 
         return new Rectangle2D.Double(newX, newY, newW, newH);
-    }
-
-    public static Rectangle2D scaleRectangle(Rectangle2D exactBoundingBox, double scale) {
-        double newWidth  = exactBoundingBox.getWidth()  * scale;
-        double newHeight = exactBoundingBox.getHeight() * scale;
-
-        double centerX = exactBoundingBox.getCenterX();
-        double centerY = exactBoundingBox.getCenterY();
-
-        double newX = centerX - newWidth  / 2.0;
-        double newY = centerY - newHeight / 2.0;
-
-        return new Rectangle2D.Double(newX, newY, newWidth, newHeight);
     }
 }

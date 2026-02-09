@@ -3,6 +3,7 @@ package routeatlas;
 import org.locationtech.proj4j.CoordinateReferenceSystem;
 import route.Route;
 import route.RouteUtils;
+import route.WayPoint;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -50,5 +51,10 @@ public class RouteAtlas {
         }
 
         return new RouteAtlas(transformedRoute, transformedPages);
+    }
+
+    public RouteAtlas convertAtlasToMiles() {
+        Route milesRoute = RouteUtils.convertRouteToMiles(route);
+        return new RouteAtlas(milesRoute, allPages);
     }
 }

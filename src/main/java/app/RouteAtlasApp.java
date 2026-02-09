@@ -1,5 +1,6 @@
 package app;
 
+import org.xml.sax.SAXException;
 import ui.controller.*;
 import ordnancesurvey.OrdnanceSurveyRouteDownloader;
 import render.AtlasImageCreator;
@@ -10,6 +11,7 @@ import utils.FileIOUtils;
 import wmts.WebMapProviders;
 
 import javax.swing.*;
+import javax.xml.parsers.ParserConfigurationException;
 import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -87,7 +89,7 @@ public class RouteAtlasApp extends JFrame {
     private void setActions() {
         atlasSetupPane.getButton().setAction(createAtlasAction);
         compilationPane.getCompilationButton().setAction(compileAtlasAction);
-        compilationPane.setCancelAction(mapUpdater::cancelMapRequest);
+        compilationPane.setCancelAction(compileAtlasAction::cancel);
         mapDisplayPane.setCancelAction(mapUpdater::cancelMapRequest);
         mapDisplayPane.setSelectPreviousMapAction(routeAtlasState::selectPreviousMap);
         mapDisplayPane.setSelectNextMapAction(routeAtlasState::selectNextMap);
@@ -95,12 +97,12 @@ public class RouteAtlasApp extends JFrame {
         sectionPageSetupPane.setPropertyChangeListener(evt -> mapUpdater.requestMap());
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         try {
             Path configFile = FileIOUtils.ensureResourceFile(BASE_DIR, "providers.xml");
-            WebMapProviders.CONFIG_FILE_PATH = configFile;
-        } catch (IOException e) {
-            e.printStackTrace();
+            WebMapProviders.load(configFile);
+        } catch (Exception e) {
+
         }
 
         SwingUtilities.invokeLater(RouteAtlasApp::new);

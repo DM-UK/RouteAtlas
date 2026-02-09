@@ -32,7 +32,7 @@ public final class HttpTileFetcher implements TileFetcher {
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
         } catch (IOException | InterruptedException e) {
-            throw new WMTSException("HTTP Exception"+e);
+            throw new WMTSException("HTTP Exception. "+e);
         }
 
         if (response.statusCode() != 200)

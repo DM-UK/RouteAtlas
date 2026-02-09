@@ -51,6 +51,7 @@ public class ElevationProfileRenderer {
         this.chart = createGraph();
     }
 
+    /** Returns the dimensions of the canvas in pixels */
     public Dimension getDimensions(){
         return chart.getDimensions();
     }
