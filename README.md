@@ -1,7 +1,8 @@
 
 # RouteAtlas
-RouteAtlas is a Java map image creation application designed for creating a printable PDF containing all map sections of a given route.
+RouteAtlas is a Java map image creation application designed for creating a printable PDF containing all map sections of a given route. 
 
+See sample output [here](https://github.com/user-attachments/files/25170141/sdw25k.pdf).
 
 
 https://github.com/user-attachments/assets/62eeaa8b-45f6-4cbe-b7b3-599b4eba10a2
@@ -22,7 +23,8 @@ A basic implementation of the WMTS protocol allows tile layers at specified zoom
 <img width="2098" height="1470" alt="different_tiles_resized" src="https://github.com/user-attachments/assets/dfcdcb14-6430-40d9-9d5a-79fa44d5c6d8" />
 
 ### Overview Page
-An overview of all the map sections is created on the first page of the PDF.
+An overview of all the map sections is created as the first page of the PDF.
+
 <img width="720" height="720" alt="overview_3_thumbnail_720x720" src="https://github.com/user-attachments/assets/62020a81-591f-4959-944a-ecaff73d350c" />
 
 
@@ -37,10 +39,9 @@ Various configurable render properties can be applied to a map.
 #### Elevation Profile
 <img width="429" height="215" alt="elevation_profile_resized" src="https://github.com/user-attachments/assets/90a66c0c-0f3f-4947-8d98-2cbf48761c10" />
 
+### Installation
+Clone the repository.
+
+Alternatively, RouteAtlas is distributed as a runnable JAR [here](https://github.com/DM-UK/RouteAtlas/blob/master/routeatlas.jar). Instructions to execute a runnable Jar are [here](https://www.talentelgia.com/blog/step-by-step-guide-to-run-a-jar-file/).
 
 
-
-
-
-
-(https://github.com/user-attachments/files/25131070/62511ab1-cc2a-41a5-81cb-a68bca8c5e59.pdf)
