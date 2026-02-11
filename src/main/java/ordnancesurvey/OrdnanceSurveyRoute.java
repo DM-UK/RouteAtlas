@@ -38,6 +38,7 @@ public class OrdnanceSurveyRoute
         private double height;
         private double ascentFromPrevious;
         private double descentFromPrevious;
+        private double distanceFromPrevious;
 
         public double getLat()
         {
@@ -65,6 +66,10 @@ public class OrdnanceSurveyRoute
 
         public double getDescentFromPrevious() {
             return descentFromPrevious;
+        }
+
+        public double getDistanceFromPrevious() {
+            return distanceFromPrevious;
         }
     }
 }

@@ -78,9 +78,11 @@ public class OrdnanceSurveyRouteDownloader {
                 if (response.statusCode() != 200)
                     throw new IOException("Unexpected HTTP status: " + response.statusCode());
 
+                System.out.println(response.body());
+
                 return objectMapper.readValue(response.body(), OrdnanceSurveyRoute.class);
             } catch (JsonProcessingException e) {
-                throw new IOException("Failed to parse route JSON");
+                throw new IOException("Failed to parse route JSON. "+ e.getMessage());
             }
             catch (InterruptedException e) {
                 throw new IOException("Thread interrupted while downloading route");
