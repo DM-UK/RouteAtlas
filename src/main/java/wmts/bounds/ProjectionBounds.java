@@ -28,10 +28,6 @@ public class ProjectionBounds implements Bounds {
         return upper;
     }
 
-    @Override public CoordinateReferenceSystem getCRS() {
-        return crs;
-    }
-
     @Override
     public Bounds transform(CoordinateReferenceSystem otherCRS) {
         CoordinateTransform transform = new BasicCoordinateTransform(crs, otherCRS);

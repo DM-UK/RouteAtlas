@@ -12,21 +12,11 @@
     <list default="true" id="ad3f677e-5ef0-4bac-910b-c18ed949a790" name="Changes" comment="minor refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/routeatlas_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/routeatlas_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/RouteAtlasApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/AtlasImageCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/AtlasImageCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/AtlasMapRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/ElevationProfileRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/render/RouteAtlasCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/render/RouteAtlasCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/route/RouteUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/route/RouteUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/routeatlas/RouteAtlas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controller/CompileAtlasAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FileIOUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/FileIOUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/GeometryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GeometryUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/DefaultWMTSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/DefaultWMTSClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/TileDownloadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/TileDownloadTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/WebMapProviders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/WebMapProviders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/HttpTileFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/tilefetcher/HttpTileFetcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/providers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/providers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRouteDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ordnancesurvey/OrdnanceSurveyRouteDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/Bounds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/bounds/GeographicBounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/GeographicBounds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wmts/bounds/ProjectionBounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wmts/bounds/ProjectionBounds.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,23 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RouteAtlasApp.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Anonymous/ra/RouteAtlas/src/main/resources",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RouteAtlasApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anonymous/ra/RouteAtlas/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ui.panes" />
@@ -179,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770586914460</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="minor refactoring">
+      <option name="closed" value="true" />
+      <created>1770641410147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1770641410147</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

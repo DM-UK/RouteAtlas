@@ -31,11 +31,6 @@ public class GeographicBounds implements Bounds {
     }
 
     @Override
-    public CoordinateReferenceSystem getCRS() {
-        return crs;
-    }
-
-    @Override
     public Bounds transform(CoordinateReferenceSystem otherCRS) {
         CoordinateTransform transform = new BasicCoordinateTransform(crs, otherCRS);
         ProjCoordinate lowerCoordinateProjection = transform.transform(lowerCoordinate, new ProjCoordinate());
@@ -73,23 +68,16 @@ public class GeographicBounds implements Bounds {
         }
 
         private static double calculateMetresPerProjectionUnit(CoordinateReferenceSystem crs, ProjCoordinate projectedPoint) {
-            // Step: move +1 unit in both X and Y directions in projected space
             ProjCoordinate projectedDiagonal = new ProjCoordinate(projectedPoint.x + 1, projectedPoint.y + 1);
 
-            // Convert both points to geographic coordinates (lat/lon)
             Projection projection = crs.getProjection();
             ProjCoordinate geoPoint = new ProjCoordinate();
             ProjCoordinate geoDiagonal = new ProjCoordinate();
             projection.inverseProject(projectedPoint, geoPoint);
             projection.inverseProject(projectedDiagonal, geoDiagonal);
 
-            // Compute geodesic distance along Earth's surface for the diagonal step
-            double diagonalDistanceMetres = projection.getEquatorRadius() * ProjectionMath.greatCircleDistance(
-                    Math.toRadians(geoPoint.x), Math.toRadians(geoPoint.y),
-                    Math.toRadians(geoDiagonal.x), Math.toRadians(geoDiagonal.y)
-            );
+            double diagonalDistanceMetres = projection.getEquatorRadius() * ProjectionMath.greatCircleDistance(Math.toRadians(geoPoint.x), Math.toRadians(geoPoint.y), Math.toRadians(geoDiagonal.x), Math.toRadians(geoDiagonal.y));
 
-            // Convert diagonal distance to "per projection unit" scale (1 unit along X/Y ≈ diagonal / sqrt(2))
             return 1 / (diagonalDistanceMetres / Math.sqrt(2.0));
         }
     }

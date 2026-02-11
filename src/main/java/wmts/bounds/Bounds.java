@@ -14,18 +14,17 @@ public interface Bounds {
         double height = upper.y - lower.y;
 
         if (width >= height) {
-            return 0; // landscape
+            return 0;
         } else {
-            return 1; // portrait
+            return 1;
         }
     }
 
     ProjCoordinate getLowerCorner();
     ProjCoordinate getUpperCorner();
-    CoordinateReferenceSystem getCRS();
     Bounds transform(CoordinateReferenceSystem otherCRS);
 
-    /** Returns all 4 corners as independent coordinates. */
+    /** Returns all 4 corner coordinates. */
     default List<ProjCoordinate> getAllCorners() {
         ProjCoordinate lower = getLowerCorner();
         ProjCoordinate upper = getUpperCorner();
@@ -37,7 +36,7 @@ public interface Bounds {
         );
     }
 
-    /** Creates a Bounds from an arbitrary set of points. */
+    /** Creates a Bounds from a set of points. */
     static Bounds fromPoints(List<ProjCoordinate> pts, CoordinateReferenceSystem crs) {
         double minX = Double.POSITIVE_INFINITY;
         double minY = Double.POSITIVE_INFINITY;
