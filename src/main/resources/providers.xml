@@ -27,7 +27,7 @@
     <wmts>
         <tileSource name="OS_API"
                     urlTemplate="https://api.os.uk/maps/raster/v1/zxy/%s/%d/%d/%d.png?key=%s"
-                    apiKey="xwRMsBNz7DLxlFnhoMXkpxCmoFDuIMQr"
+                    apiKey="INSERT KEY HERE"
                     maxConcurrentConnections="5">
             <header key="referer" value="https://labs.os.uk/" />
         </tileSource>
